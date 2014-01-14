@@ -1,0 +1,24 @@
+<div class="container">
+<div class="well">
+    
+    <%= link_to "New Category", new_category_path, remote: true, class: "btn btn-primary" %>
+    <%= link_to "Back", posts_path, class: "btn btn-primary" %>
+   
+</div>
+<div class="new-cat"></div>
+
+<table class="table table-bordered table-striped">
+  <thead>
+  	<tr>
+  		<th>Category Name</th>
+      <th>Desription</th>
+  		<th>&nbsp;</th>
+  		<th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody class="cat-index">
+  	<%= render 'cat_index' %>
+  </tbody>
+</table>
+</div>
+<div id="cat-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-header" aria-hidden="true"></div>

@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140114142306) do
+ActiveRecord::Schema.define(version: 20140114161329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: true do |t|
+    t.string   "cat_name"
+    t.text     "cat_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "comments", force: true do |t|
     t.string   "c_author"
@@ -28,9 +35,10 @@ ActiveRecord::Schema.define(version: 20140114142306) do
     t.string   "title"
     t.text     "body"
     t.string   "author"
-    t.float    "rating",     default: 0.0
+    t.float    "rating",      default: 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_id"
   end
 
 end

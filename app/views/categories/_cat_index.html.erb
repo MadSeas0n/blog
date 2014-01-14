@@ -1,0 +1,11 @@
+<% @categories.each do |cat| %>
+	<tr>
+		<td><%= cat.cat_name %></td>        		
+		<td><%= cat.cat_description %></td>
+		<td><%= link_to "Edit", edit_category_path(cat), remote: true, class: "btn btn-success" %></td>
+		<td><%= link_to "Delete", category_delete_path(cat), remote: true, class: "btn btn-danger"  %></td>
+		<td><%= link_to "Show", category_path(cat), remote: true, class: "btn btn-primary"  %></td>
+           
+    </tr>
+	
+<% end %>
