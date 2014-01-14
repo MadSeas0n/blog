@@ -1,0 +1,15 @@
+<% @posts.each do |post| %>
+	<tr>
+		<td><%= post.author %><br>
+        <%= @poster_ip %>
+		</td>
+		<td><%= post.title %></td>
+		<td><%= post.body %></td>
+		<td><%= post.rating %></td>
+		<td><%= link_to "Edit", edit_post_path(post), remote: true, class: "btn btn-success" %></td>
+		<td><%= link_to "Delete", post_delete_path(post), remote: true, class: "btn btn-danger"  %></td>
+		<td><%= link_to "Show", post_path(post), remote: true, class: "btn btn-primary"  %></td>
+           
+    </tr>
+	
+<% end %>

@@ -1,0 +1,31 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+    <h3>
+      <%= @post.title %>
+    </h3>
+    <h4>
+      <%= @post.author %> 
+    </h4>
+    </div>
+    <div class="modal-body">
+      <%= @post.body %><br>
+      <%= link_to '+', like_post_path(@post), remote: true %>
+      <%= @post.rating %>
+      <%= link_to '-', dislike_post_path(@post), remote: true %><br>
+
+      <div class="modal-body">
+      <div id='comments'>
+      <%= render @post.comments %>      
+      </div>
+      </div>
+      
+      <%= render 'comments/form' %>
+
+
+    </div>
+    <div class="modal-footer">
+      <%= link_to "Close", '#', class: "btn btn-danger", data: {dismiss: "modal"} %>
+    </div>
+</div>
+</div>
